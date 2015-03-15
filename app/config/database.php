@@ -1,29 +1,17 @@
 <?php
 
-if($_SERVER['HTTP_HOST'] == 'localhost:8888'){
+
 	$mysql = array(
 				'driver'    => 'mysql',
 				'host'      => 'localhost',
-				'database'  => 'services',
+				'database'  => 'wood',
 				'username'  => 'root',
 				'password'  => 'root',
 				'charset'   => 'utf8',
 				'collation' => 'utf8_unicode_ci',
 				'prefix'    => '',
 			);
-}else{
-	$mysql = array(
-				'driver'    => 'mysql',
-				'host'      => 'localhost',
-				'database'  => 'worldswe_planetwood',
-				'username'  => 'worldswe',
-				'password'  => 'pAul0011$$',
-				'charset'   => 'utf8',
-				'collation' => 'utf8_unicode_ci',
-				'prefix'    => '',
-			);
-	
-}
+
 
 return array(
 

@@ -476,7 +476,7 @@ class Application extends Container implements HttpKernelInterface, TerminableIn
     }
     public static function getBootstrapFile()
     {
-        return '/Users/mikewilliams/Applications/Mapm2/htdocs/vendor/laravel/framework/src/Illuminate/Foundation' . '/start.php';
+        return '/Applications/MAMP2/htdocs/newlaravelpj/wood3/vendor/laravel/framework/src/Illuminate/Foundation' . '/start.php';
     }
     public function startExceptionHandling()
     {
