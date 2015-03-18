@@ -1,69 +1,363 @@
-<!doctype html>
-<html lang="en">
-<head>
-	<meta charset="UTF-8">
-	<title>Laravel PHP Framework</title>
-	<style>
-		@import url(//fonts.googleapis.com/css?family=Lato:700);
+@extends('layouts.master')
 
-		body {
-			margin:0;
-			font-family:'Lato', sans-serif;
-			text-align:center;
-			color: #999;
-		}
+@section('content')
 
-		.welcome {
-			width: 300px;
-			height: 200px;
-			position: absolute;
-			left: 50%;
-			top: 50%;
-			margin-left: -150px;
-			margin-top: -100px;
-		}
+@include('modals.login')
 
-		a, a:visited {
-			text-decoration:none;
-		}
 
-		h1 {
-			font-size: 32px;
-			margin: 16px 0 0 0;
-		}
-	</style>
-	<script src='https://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js'></script>
-	<script src='js/angular/app.js'></script>
-	<script src='js/angular/controllers/usersController.js'></script>
-</head>
-<body ng-app="app">
-	<div ng-controller='usersController' class="welcome">
-		<a href="http://laravel.com" title="Laravel PHP Framework"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAIcAAACHCAYAAAA850oKAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyRpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMy1jMDExIDY2LjE0NTY2MSwgMjAxMi8wMi8wNi0xNDo1NjoyNyAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNiAoTWFjaW50b3NoKSIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDoyNUVCMTdGOUJBNkExMUUyOTY3MkMyQjZGOTYyREVGMiIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDoyNUVCMTdGQUJBNkExMUUyOTY3MkMyQjZGOTYyREVGMiI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOjI1RUIxN0Y3QkE2QTExRTI5NjcyQzJCNkY5NjJERUYyIiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOjI1RUIxN0Y4QkE2QTExRTI5NjcyQzJCNkY5NjJERUYyIi8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+g6J7EAAAEL1JREFUeNrsXQmU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" alt="Laravel PHP Framework"></a>
-		<h1>You have arrived.</h1>
-		[[user]]
+<div class="slide" id="slide1" data-slide="1" data-stellar-background-ratio="0.5">
+	<div class="padding_slide1">
+		<div class="container clearfix">
+			<div id="content" class="grid_12">
+				<div class="filtr_bg">
+					<p>W e l c o m e&emsp;t o&emsp;F a b u l a s h</p>
+					<h1>We are Charlotte's Eyelash<br>Extension Professionals</h1>
+					<a href="http://www.schedulicity.com/Scheduling/Default.aspx?business=FDUAS7" title="Online scheduling" target="_blank"><img src="images/schedule-button.png" style="padding-top: 50px; margin-bottom: -75px;" alt="Schedule online now" border="0" /></a>
+				</div>
+				<div class="not_mobile"><a class="button" title="" data-slide="2">Read More</a></div>
+			</div>
+		</div>
+	</div>
+</div>
 
 
 
+<div class="slide" id="slide2" data-slide="2" data-stellar-background-ratio="0.5">
+	<div class="container clearfix">
+
+		<div id="content" class="grid_12">
+			<h3>About</h3>
+			<h2>Fabulash professionals have been trained and certified to ensure the highest level of quality.</h2>
+		</div>
+		<div id="content" class="grid_12">
+			<img class="about_img" src="images/about.png" alt="Eyelash extensions Charlotte" />
+			<p>We are Charlotte's leading custom eyelash boutique with two convenient locations in Charlotte and Lake Norman.  Fabulash professionals have been trained and certified to provide the best eyelash application methods that ensures a natural look and feel while making the eyelash application process easy and comfortable. Our Fabulash Synthetic Lashes are individually applied to each of your own eyelashes making them appear as if they each had their own root.  Using our strong but gentle bonding method, your new lashes will last for months as they will follow your natural hair growth cycle. </p>
+		</div>
+		<button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#login">
+			Launch demo modal
+		</button>
+		<a href="/newlaravelpj/wood3/public/logout">Log Out</a>
+		<button ng-click="login()">Login</button>
+	</div>
+</div>
 
 
 
-		<form action="pay" method="POST">
-			<script
-				src="https://checkout.stripe.com/v2/checkout.js" class="stripe-button"
-				data-key={{{Config::get('stripe.stripe.public')}}}
-				data-amount="2000"
-				data-name="Demo Laravel Site"
-				data-description="2 scoops of ice cream ($20.00)"
-				data-image="/128x128.png">
-			</script>
-		</form>
+<div class="slide" id="slide3" data-slide="3" data-stellar-background-ratio="0.5">
+	<div class="padding_slide3">
+		<div class="container clearfix">
 
-		
+			<div id="content" class="grid_12">
+				<p>Our goal is to give you beautiful<br> lashes that you will absolutely<br> adore, everyone will admire,<br> and you are enamored with!</p>
+			</div>
+
+		</div>
+	</div>
+</div>
+
+<?php
+	if (Auth::check())
+	{
+		echo 'logged in';
+	}else{
+		echo 'not logged in';
+	}
+?>
 
 
+<div class="slide" id="bna" data-slide="6" data-stellar-background-ratio="0.5">
+	<div class="container clearfix">
 
+		<div id="content" class="grid_12">
+			<h3><span>Before &amp; After</span></h3>
+			<h2>Our application method provides a natural appearance.</h2>
+		</div>
+		<div class="clear"></div>
+
+		<div>
+			<!-- gallery_block -->
+			<ul class="gallery-list gallery-list2">
+				<li class="grid_3 bna_grey">
+					<a href="images/before1.jpg" rel="prettyPhoto[portfolio1]">
+						<div class="portfolio_descr">
+							<p>Before</p>
+						</div>
+						<div class="hover_img">
+
+							<img src="images/before1.jpg" alt="Before picture" />
+						</div>
+					</a>
+					<a href="images/after1.jpg" rel="prettyPhoto[portfolio1]">
+						<div class="portfolio_descr">
+							<p>After</p>
+						</div>
+						<div class="hover_img" style="margin-top:10px;">
+							<img src="images/after1.jpg" alt="After picture" />
+						</div>
+					</a>
+				</li>
+				<li class="grid_3 bna_grey">
+					<a href="images/before2.jpg" rel="prettyPhoto[portfolio1]">
+						<div class="portfolio_descr">
+							<p>Before</p>
+						</div>
+						<div class="hover_img">
+
+							<img src="images/before2.jpg" alt="Before eyelash extension" />
+						</div>
+					</a>
+					<a href="images/after2.jpg" rel="prettyPhoto[portfolio1]">
+						<div class="portfolio_descr">
+							<p>After</p>
+						</div>
+						<div class="hover_img" style="margin-top:10px;">
+							<img src="images/after2.jpg" alt="Before eyelash extension" />
+						</div>
+					</a>
+				</li>
+				<li class="grid_3 bna_grey">
+					<a href="images/before3.jpg" rel="prettyPhoto[portfolio1]">
+						<div class="portfolio_descr">
+							<p>Before</p>
+						</div>
+						<div class="hover_img">
+
+							<img src="images/before3.jpg" alt="volume lashes" />
+						</div>
+					</a>
+					<a href="images/after3.jpg" rel="prettyPhoto[portfolio1]">
+						<div class="portfolio_descr">
+							<p>After</p>
+						</div>
+						<div class="hover_img" style="margin-top:10px;">
+							<img src="images/after3.jpg" alt="extreme lashes" />
+						</div>
+					</a>
+				</li>
+				<li class="grid_3 bna_grey omega">
+					<a href="images/before4.jpg" rel="prettyPhoto[portfolio1]">
+						<div class="portfolio_descr">
+							<p>Before</p>
+						</div>
+						<div class="hover_img">
+
+							<img src="images/before4.jpg" alt="Beauty products" />
+						</div>
+					</a>
+					<a href="images/after4.jpg" rel="prettyPhoto[portfolio1]">
+						<div class="portfolio_descr">
+							<p>After</p>
+						</div>
+						<div class="hover_img" style="margin-top:10px;">
+							<img src="images/after4.jpg" alt="Eyelash extensions" />
+						</div>
+					</a>
+				</li>
+				<div class="clear"></div>
+			</ul>
+			<!-- //gallery_block -->
+
+		</div>
 
 	</div>
-</body>
-</html>
+</div>
 
+
+<div class="slide" id="slide5" data-slide="5" data-stellar-background-ratio="0.5">
+	<div class=" padding_slide3">
+		<div class="container clearfix">
+
+			<div id="content" class="grid_12">
+				<p>You will not feel a difference<br> once your Fabulash eyelashes<br> have been applied.</p>
+			</div>
+
+		</div>
+	</div>
+</div>
+
+
+<div class="slide" id="slide4" data-slide="4" data-stellar-background-ratio="0.5">
+	<div class="container clearfix">
+
+		<div id="content" class="grid_12">
+			<h3><span>Fabulash Application</span></h3>
+			<h2>Fabulash provides an easy and gentle application process.</h2>
+			<div>
+				<!-- Services_block -->
+				<ul class="gallery-list">
+					<li class="grid_3">
+						<!--<a href="javascript:void(0);">-->
+						<div class="hover_img">
+							<center><img src="images/preparations.png" alt="Lash Extensions" /></center>
+						</div>
+						<div class="portfolio_descr">
+							<p>Preparation</p>
+							<span>Our professionals will answer all your questions and give you advice on how to care for your lashes. </span>
+						</div>
+						<!--</a>-->
+					</li>
+					<li class="grid_3">
+						<!--<a href="javascript:void(0);">-->
+						<div class="hover_img">
+							<img src="images/application.png" alt="Charlotte eyelash extensions" />
+						</div>
+						<div class="portfolio_descr">
+							<p>Procedure</p>
+							<span>Fabulash synthetic lashes will be individually bonded to your existing eyelashes to look and feel natural.</span>
+						</div>
+						<!--</a>-->
+					</li>
+					<li class="grid_3">
+						<!--<a href="javascript:void(0);">-->
+						<div class="hover_img">
+							<img src="images/afterapplication.png" alt="Eyelash Extensions Charlotte" />
+						</div>
+						<div class="portfolio_descr">
+							<p>Initial Care</p>
+							<span>For the first three hours special care will be required, such as no contact with water. </span>
+						</div>
+						<!--</a>-->
+					</li>
+					<li class="grid_3 omega">
+						<!--<a href="javascript:void(0);">-->
+						<div class="hover_img">
+							<img src="images/aftercare.png" alt="Eyelash Extensions Charlotte" />
+						</div>
+						<div class="portfolio_descr">
+							<p>After Care</p>
+							<span>Keep oily or greasy products away from base of lashes. No rubbing, picking or pulling on lashes </span>
+						</div>
+						<!--</a>-->
+					</li>
+					<div class="clear"></div>
+
+					<div class="clear"></div>
+				</ul>
+				<!-- //Services_block -->
+			</div>
+
+		</div>
+
+	</div>
+</div>
+
+
+
+<div class="slide" id="slide7" data-slide="7" data-stellar-background-ratio="0.5">
+	<div class=" padding_slide7">
+		<div class="container clearfix">
+
+			<div id="content" class="grid_12">
+				<span>Experienced and knowledgeable<br> Fabulash professionals are ready<br> to help you achieve your new look</span>
+			</div>
+
+		</div>
+	</div>
+</div>
+
+<div class="slide" id="slide10" data-slide="10" data-stellar-background-ratio="0.5">
+	<div class="container clearfix">
+
+		<div id="content" class="grid_12">
+			<h3><span>Contact</span></h3>
+			<h2><!--Cras urna leo, fringilla nec aliquam ac, varius in enim. Maecenas non felis--></h2>
+		</div>
+		<div class="clear"></div>
+
+		<div class="grid_9">
+			<div class="contact_form">
+				<div id="note"></div>
+				<div id="fields">
+					<form id="ajax-contact-form" action="">
+						<input type="text" name="name" value="" placeholder="Name" />
+						<input type="text" name="phone" value="" placeholder="Phone" />
+						<input type="text" name="email" value="" placeholder="Email" />
+						<textarea name="message" id="message" placeholder="Message"></textarea>
+						<div class="clear"></div>
+						<!--<input type="reset" class="contact_btn" value="Clear Form" />-->
+						<input type="submit" class="contact_btn send_btn" value="Send" />
+						<div class="clear"></div>
+					</form>
+				</div>
+			</div>
+			<div class="customer-note">
+				<p>Dear Clients,</p>
+				<p>
+					We appreciate your business and would love your feedback. Write us a review on  <a href="http://www.yelp.com/biz/fabulash-charlotte" target="_blank">Yelp</a>,
+					<a href="https://plus.google.com/113305301395384986489/about?review=1&source=lo-ta&hl=en&gl=us" target="_blank">Google</a>, or
+					like our <a href="https://www.facebook.com/pages/Fabulash-Charlotte/1047240398623203" target="_blank">Facebook Page</a> and invite your friends! We appreciate all your support.
+				</p>
+				<p>Fabulash</p>
+			</div>
+		</div>
+		<div class="grid_3 contact_det_block omega">
+			<p></p>
+			<a href="http://www.schedulicity.com/Scheduling/Default.aspx?business=FDUAS7" title="Online scheduling" target="_blank"><img src="images/schedule-button.png" alt="Schedule online now" border="0" /></a>
+			<ul class="foot_block_intouch">
+				<li class="touch_phone"><p>(+1) 704 906 4586</p></li>
+				<li class="touch_clock"><p>Mon - Sat 9:00am - 6:00 pm</p></li>
+				<li class="touch_mail"><a href="mailto:fabulashcharlotte@gmail.com">fabulashcharlotte@gmail.com</a></li>
+				<li class="touch_site"><a href="www.fabulashcharlotte.com">www.fabulashcharlotte.com</a></li>
+				<li class="touch_adress"><a target='_blank' href='http://pozasalon.com/'><p style="font-weight: bold; color: #0099ff;">Charlotte Location<br>Poza<br>2314 Cresent Avenue<br>Charlotte, NC 28207</p></a></li>
+				<li class="touch_adress"><a target='_blank' href='http://www.dollfaceskinandmakeup.com/'><p style="font-weight: bold; color: #0099ff;">Cornelius Location<br>Dollface<br>19428 Zion Avenue<br>Cornelius, NC 28031</p></a></li>
+			</ul>
+		</div>
+		<div class="clear"></div>
+		<div id="content" class="grid_12 contact">
+			<h2><span>Downloadable Forms</span></h2>
+			<div class="grid_4">
+				<a target="_blank" href="pdfs/Care-Tips.pdf"><div class="form_btn"><!--<i class="icon-file-alt"></i>--><span>  Care Tips<span></div></a>
+			</div>
+			<div class="grid_4">
+				<a target="_blank" href="pdfs/Consent-Form.pdf"><div class="form_btn"><!--<i class="icon-file-alt"></i>--><span>  Consent Form<span></div></a>
+			</div>
+			<div class="grid_4 omega">
+				<a target="_blank" href="pdfs/Consultation-Questionnaire.pdf"> <div class="form_btn"><!--<i class="icon-file-alt"></i>--><span> Questionnaire<span></div></a>
+			</div>
+
+		</div>
+		<div class="clear"></div>
+	</div>
+	<div class="overlay" onClick="style.pointerEvents='none'"></div>
+	<div id="map_block">
+
+	</div>
+
+</div>
+
+
+<div class="slide qa" id="slide11" data-slide="11" data-stellar-background-ratio="0.5">
+	<div class="container clearfix">
+
+		<div id="content" class="grid_12">
+			<h3>Q&A</h3>
+			<h2>Eyelash Extensions Questions and Answers</h2>
+		</div>
+		<div id="content" class="grid_12">
+			<h4>What are eyelash extensions? </h4>
+			<p>Eyelash Extensions are semi-permanent eyelash extensions comprised of individual synthetic eyelashes that are curved to replicate a natural eyelash. Our lashes are thicker at the base and taper to a fine point. They are applied to individual eyelashes, one extension at a time, for a natural, elegant look to lengthen and add fullness to the existing lashes.</p>
+
+			<h4>WHAT ARE EYELASH EXTENSIONS MADE OUT OF? </h4>
+			<p>Our Exclusive Eyelash Extensions look and feel completely real, they are made of synthetic material that replicate the natural curve of a real lash.</p>
+
+			<h4>WHAT ARE THE BENEFITS OF WEARING EYELASH EXTENSIONS? </h4>
+			<p>To lengthen, thicken, curve and lift  your natural lashes. Our  Eyelash Extensions create the appearance of a brighter, more open and rested eye, thereby creating a more youthful and rejuvenated look.  You will spend less time with makeup; mascara is certainly no longer necessary. Because our lashes are bigger at the base, they create the same effect as eyeliner so that step can be avoided. The added benefit is that they look beautiful morning and night, all day, every day. Say goodbye to the application of mascara, stained tears and mascara raccoon masks around the eyes.</p>
+
+			<h4>HOW LONG DO YOUR EYELASH EXTENSIONS LAST? </h4>
+			<p>The look can be maintained indefinitely with refills. When properly applied your lash extension will remain in place until the natural lash on which it rests falls out. With proper care and maintenance refills are typically only needed every 2 to 4 weeks to replace the lashes that have shed.</p>
+
+			<h4>WHAT IS THE PROCEDURE? </h4>
+			<p>Eyelash extensions are a safe, relaxing procedure that lasts between 50 minutes to 2 hours. You will be comfortably reclined with your eyes closed while the lashes are applied one at the time to your own natural lashes. There is no discomfort of pain involved in the application, in fact most clients find it so relaxing that they fall asleep.</p>
+
+			<h4>CAN I APPLY EYELASH EXTENSIONS TO MY OWN EYELASHES? </h4>
+			<p>Unprofessional application or self-application may cause eye injury, lash damage or unnatural looking lashes. Our Lash extensions are applied one lash at a time to your individual natural eyelashes to achieve long, thick and natural looking eyelashes. The procedure involves bonding the synthetic extension to your own natural eyelashes and should be performed only by professionally trained Lash Stylists only.</p>
+
+			<h4>WILL LASH EXTENSIONS DAMAGE MY LASHES? </h4>
+			<p>Not when properly applied. In fact, lash extensions are kinder to your natural lashes because you won't need to curl or apply mascara, which can break and dry your lashes.</p>
+
+		</div>
+	</div>
+</div>
+
+
+@stop

@@ -1,0 +1,275 @@
+/* CUSTOM CSS by JDD Marketing */
+
+.mobile-menu {
+  position:fixed;
+  top:0px;
+  width:100%;
+ 
+  background-color:#0099ff;
+  z-index:9999;
+}
+
+
+
+.menu {
+	position:fixed;
+	top:0px;
+	width:100%;
+	height:74px;
+	background-color:#0099ff;
+	z-index:9999;
+}
+
+#logo {
+	margin-top: 20px;
+	margin-bottom:0;
+}
+
+/*___NAVIGATION___*/
+
+
+
+
+#nav,
+#nav * {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+#nav,
+#nav ul {
+  list-style: none;
+  width: 100%;
+  float: left;
+  padding: 5px 0;
+}
+
+#nav li {
+  float: left;
+  width: 100%;
+}
+
+@media screen and (min-width: 40em) {
+  #nav li {
+    width: 25%;
+    *width: 24.9%; /* IE7 Hack */
+    _width: 19%; /* IE6 Hack */
+  }
+}
+
+#nav a {
+  color: #fff;
+  text-decoration: none;
+  width: 100%;
+  background: #f4421a;
+  border-bottom: 1px solid white;
+  padding: 0.7em 1em;
+  float: left;
+}
+
+@media screen and (min-width: 40em) {
+  #nav a {
+    margin: 0;
+    padding: 1em;
+    float: left;
+    text-align: center;
+    border-bottom: 0;
+    border-right: 1px solid white;
+  }
+}
+
+#nav ul ul a {
+  background: white;
+  padding-left: 2em;
+}
+
+@media screen and (min-width: 40em) {
+  #nav ul ul a {
+    display: none;
+  }
+}
+
+#nav-toggle {
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  width: 70px;
+  height: 55px;
+  float: right;
+  text-indent: -9999px;
+  overflow: hidden;
+  background: #0099ff url("../images/hamburger.gif") no-repeat 50% 33%;
+}
+
+@media screen and (-webkit-min-device-pixel-ratio: 1.3), screen and (min--moz-device-pixel-ratio: 1.3), screen and (-o-min-device-pixel-ratio: 2 / 1), screen and (min-device-pixel-ratio: 1.3), screen and (min-resolution: 192dpi), screen and (min-resolution: 2dppx) {
+  #nav-toggle {
+    background-image: url("../images/hamburger-retina.gif");
+    -webkit-background-size: 100px 100px;
+    -moz-background-size: 100px 100px;
+    -o-background-size: 100px 100px;
+    background-size: 100px 100px;
+  }
+}
+.navigation li {
+margin-left: 0px;
+}
+
+
+/* ____________________________________ Slide 1 ____________________________________ */ 
+
+#slide1{
+	background-color:#ffffff;
+	background-image:url(../images/eyelashblur1.jpg);
+	text-align:center;
+	background-position:0 0 !important;
+	background-size: cover !important;
+	width:100%;
+}
+
+#slide1 p {
+text-transform: uppercase;
+background: url(../images/icon9.png) no-repeat top center;
+font-size: 14px;
+color: #0099ff;
+line-height: 20px;
+margin: 0 0 19px 0;
+padding: 0;
+font-weight: 600;
+text-shadow: 2px 2px 15px #343434;
+}
+
+#slide1 h1 {
+margin: 0;
+padding: 0 0 29px 0;
+border-bottom: 1px solid #343434;
+text-transform: uppercase;
+font-family: 'Yanone Kaffeesatz', sans-serif;
+font-size: 99px;
+line-height: 95px;
+color: #09f;
+font-weight: 200;
+text-shadow: 2px 2px 5px #343434;
+}
+
+#slide1 a.button {
+background-image: url(../images/arrow_down.png);
+display: block;
+height: 60px;
+margin: -50px auto;
+width: 83px;
+text-transform: uppercase;
+font-family: 'Yanone Kaffeesatz', sans-serif;
+font-weight: 300;
+font-size: 23px;
+line-height: 34px;
+color: #343434;
+}
+/* ____________________________________ Slide 2 ____________________________________ */ 
+
+#slide2{
+	background: white;
+	padding:90px 0 79px 0;
+}
+
+/* ____________________________________ Slide 3 ____________________________________ */ 
+.padding_slide3 {
+padding:30px 0 50px 0;
+}
+
+/* ____________________________________ Slide 4 ____________________________________ */
+
+#slide4{
+	overflow:hidden;
+	background: white;
+	padding:90px 0 0 0;
+}
+
+#slide4 .gallery-list .grid_3 a:hover {
+text-decoration: none;
+background: #ddd;
+outline: 1px solid #d2d0cb;
+transition: all 0.3s ease-in-out;
+-moz-transition: all 0.3s ease-in-out;
+-webkit-transition: all 0.3s ease-in-out;
+-o-transition: all 0.3s ease-in-out;
+}
+
+#slide4 .gallery-list .grid_3 a:hover p {
+	color:#0099ff;
+}
+#slide4 .gallery-list .grid_3 a:hover .hover_img {
+	border:4px solid #0099ff !important;
+}
+
+/* ____________________________________ Slide 6 ____________________________________ */
+
+#slide6 {
+background: white;
+padding: 90px 0;
+}
+
+/* ____________________________________ Slide 7 ____________________________________ */
+
+.padding_slide7 {
+	padding:30px 0 50px;
+}
+
+/* ____________________________________ Slide 10 ____________________________________ */
+
+#slide10{
+	background: white;
+	padding:90px 0 0 0;
+}
+
+/* ______________ CONTACT_FORM ______________ */
+
+
+.contact_btn {
+	display: inline-block;
+	border:none;
+	text-transform:uppercase;
+	margin:0 6px 10px 0;
+	padding:3px 20px 5px;
+	font-size: 20px;
+	line-height: 20px;
+	color: #fff;
+	font-family:'Yanone Kaffeesatz', sans-serif;
+	font-weight:400;
+	text-align: center;
+	vertical-align: middle;
+	background:#343434;
+}
+.contact_btn:hover,
+.send_btn {
+	background:#0099ff;
+}
+
+.send_btn:hover {
+	background:#343434;
+}
+/* _____________ //CONTACT_FORM _____________ */
+
+@media (max-width: 766px) {
+.not_mobile {display: none;}
+
+.menu {
+position: fixed;
+top: 0px;
+width: 100%;
+height:auto;
+background-color: #0099ff;
+z-index: 9999;
+}
+
+
+
+}
+@media (min-width: 766px) {
+.not_desktop {display: none;}
+
+}
+
+

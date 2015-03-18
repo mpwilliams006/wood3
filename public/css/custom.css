@@ -1,0 +1,485 @@
+
+.menu {
+	position:fixed;
+	top:0px;
+	width:100%;
+	height:74px;
+	background-color:#0099ff;
+	z-index:9999;
+}
+
+#logo {
+	margin-top: 21px;
+	margin-bottom:0;
+}
+
+/*___NAVIGATION___*/
+
+
+#nav {
+	text-align: right;
+}
+.navigation{
+	float: right;
+	list-style: none;
+	margin: 0;
+}
+ul.navigation {
+	margin:22px 0;
+	padding:0;
+}
+.navigation li{
+	float: left;
+	text-align:left;
+	padding:0;
+	margin-left:30px;
+	text-transform:uppercase;
+	background:none;
+	font-family:'Yanone Kaffeesatz', sans-s erif;
+	font-weight:200;
+	font-size:18px;
+	line-height:20px;
+	color:#343434;
+}
+.navigation li:first-child{margin-left:0;}
+.navigation li:hover,
+.navigation .active {
+	cursor:pointer;
+	color: #fff;
+}
+.navigation li span{
+	display:block;
+	text-transform:none;
+	font-family:'Arial';
+	font-size:11px;
+	line-height:14px;
+	font-weight:400;
+	color:#343434;
+}
+
+/* ____________________________________ Slide 1 ____________________________________ */ 
+
+#slide1{
+	background-color:#ffffff;
+	background-image:url(../images/eyelashblur1.jpg);
+	text-align:center;
+	background-position:0 0 !important;
+	background-size: cover !important;
+	width:100%;
+}
+
+#slide1 p {
+text-transform: uppercase;
+background: url(../images/icon9.png) no-repeat top center;
+font-size: 14px;
+color: #0099ff;
+line-height: 20px;
+margin: 0 0 19px 0;
+padding: 0;
+font-weight: 600;
+text-shadow: 2px 2px 5px #343434;
+}
+
+#slide1 h1 {
+margin: 0;
+padding: 0 0 29px 0;
+border-bottom: 1px solid #343434;
+text-transform: uppercase;
+font-family: 'Yanone Kaffeesatz', sans-serif;
+font-size: 99px;
+line-height: 95px;
+color: #09f;
+font-weight: 200;
+text-shadow: 2px 2px 5px #343434;
+}
+
+#slide1 a.button {
+background-image: url(../images/arrow_down.png);
+display: block;
+height: 60px;
+margin: -50px auto;
+width: 83px;
+text-transform: uppercase;
+font-family: 'Yanone Kaffeesatz', sans-serif;
+font-weight: 300;
+font-size: 23px;
+line-height: 34px;
+color: #343434;
+}
+/* ____________________________________ Slide 2 ____________________________________ */ 
+
+#slide2{
+	background: white;
+	padding:90px 0 79px 0;
+}
+
+/* ____________________________________ Slide 3 ____________________________________ */ 
+
+#slide3{
+	background-image:url(../images/fabpic.jpg);
+	background-size: cover !important;
+	width:100%;
+	background-position:0 0 !important;
+	text-align:center;
+}
+.padding_slide3 {
+padding:75px 0 50px 0;
+}
+
+#slide3 p {
+	padding:0;
+	margin:0;
+	text-transform:uppercase;
+	font-family:'Yanone Kaffeesatz', sans-serif;
+	font-size: 72px;
+	line-height: 80px;
+	color:#fff;
+	font-weight: 200;
+	text-shadow: 2px 2px 5px #343434;
+
+}
+
+/* ____________________________________ Slide 4 ____________________________________ */
+
+#slide4{
+	overflow:hidden;
+	background: white;
+	padding:90px 0 0 0;
+}
+
+#slide4 .gallery-list .grid_3 a:hover {
+text-decoration: none;
+background: #ddd;
+outline: 1px solid #d2d0cb;
+transition: all 0.3s ease-in-out;
+-moz-transition: all 0.3s ease-in-out;
+-webkit-transition: all 0.3s ease-in-out;
+-o-transition: all 0.3s ease-in-out;
+}
+
+#slide4 .gallery-list .grid_3 a:hover p {
+	color:#0099ff;
+}
+#slide4 .gallery-list .grid_3 a:hover .hover_img {
+	border:4px solid #0099ff !important;
+}
+
+/* ____________________________________ Slide 5 ____________________________________ */ 
+#slide5{
+	background-image:url(../images/eyelash1.jpg);
+	background-size: cover !important;
+	width:100%;
+	background-position:0 0 !important;
+	text-align:center;
+}
+#slide5 p {
+	padding:0;
+	margin:0;
+	text-transform:uppercase;
+	font-family:'Yanone Kaffeesatz', sans-serif;
+	font-size: 72px;
+	line-height: 80px;
+	color:#0099ff;
+	font-weight: 200;
+	text-shadow: 2px 2px 5px #343434;
+}
+
+/* ____________________________________ Slide 6 ____________________________________ */
+
+#slide6 {
+background: white;
+padding: 90px 0;
+}
+
+/* ____________________________________ Slide 7 ____________________________________ */
+
+.padding_slide7 {
+	padding: 70px 0 50px;
+}
+#slide7{
+	background-image:url(../images/eyelash3.jpg);
+	background-position:0 0 !important;
+	text-align:center;
+	background-size: cover !important;
+	width:100%;
+}
+
+#slide7 span {
+	text-transform:uppercase;
+	font-family: 'Yanone Kaffeesatz', sans-serif;
+	font-size: 75px;
+	line-height: 80px;
+	color:#0099ff;
+	font-weight: 200;
+	text-shadow: 2px 2px 5px #343434;
+}
+
+
+/* ____________________________________ Slide 10 ____________________________________ */
+
+#slide10{
+	background: white;
+	padding:90px 0 0 0;
+}
+
+/* ______________ CONTACT_FORM ______________ */
+
+
+.contact_btn {
+	display: inline-block;
+	border:none;
+	text-transform:uppercase;
+	margin:0 6px 10px 0;
+	padding:3px 20px 5px;
+	font-size: 20px;
+	line-height: 20px;
+	color: #fff;
+	font-family:'Yanone Kaffeesatz', sans-serif;
+	font-weight:400;
+	text-align: center;
+	vertical-align: middle;
+	background:#343434;
+}
+.contact_btn:hover,
+.send_btn {
+	background:#0099ff;
+}
+
+.send_btn:hover {
+	background:#343434;
+}
+.contact h2 {
+	margin:0 0 20px 0;
+	padding:0 0 10px 0;
+	background:url(../images/icon101.png) no-repeat bottom center;
+	text-transform:uppercase;
+	text-align:center;
+	font-family:Arial;
+	font-size: 14px;
+	line-height: 20px;
+	color:#3e3e3e;
+	font-weight: 400;
+	border-bottom: 1px solid #B5B5B5;
+}
+.form_btn {
+	background: #0099ff;
+	font-family: 'Yanone Kaffeesatz', sans-serif;
+	text-transform: uppercase;
+	font-size: 1.35em;
+	text-align: center;
+	vertical-align: middle;
+	cursor: pointer;
+	margin: 10px;
+	padding: 10px 7px;
+	border:3px solid #3399ff;
+	text-align: center;
+	color: #f4f4f4;
+}
+.form_btn:hover{
+	background:#cccccc;
+	border: 3px solid #B5B5B5;
+}
+
+.forn_btn span {
+
+}
+.form_btn span a {
+	text-decoration: none;
+	color:white;
+}
+.form_btn span a:hover {
+	text-decoration: none;
+
+}
+#note .notification_ok {
+	margin:20px 0;
+	padding:7px 10px;
+	text-align:center;
+	text-transform:uppercase;
+	background:#8DC63F;
+	font-family: 'Yanone Kaffeesatz', sans-serif;
+	font-weight:600;
+	font-size:20px;
+	color:#fff;
+}
+/* _____________ //CONTACT_FORM _____________ */
+
+/* ____________________________________ Before and After ____________________________________ */
+
+#bna{
+	overflow:hidden;
+	background: white;
+	padding:90px 0 0 0;
+}
+
+#bna .gallery-list .grid_3 a:hover {
+text-decoration: none;
+background: #ddd;
+outline: 1px solid #d2d0cb;
+transition: all 0.3s ease-in-out;
+-moz-transition: all 0.3s ease-in-out;
+-webkit-transition: all 0.3s ease-in-out;
+-o-transition: all 0.3s ease-in-out;
+}
+
+#bna .gallery-list .grid_3 a:hover p {
+	color:#0099ff;
+}
+
+
+/* ____________________________________ Slide 4 ____________________________________ */
+
+
+/* _________________ PORTFOLIO ________________ */
+#bna .gallery-list li.grid_3 {width:232px !important;}
+
+#bna ul{
+	margin-top:22px;
+	margin-bottom:15px;
+	list-style-type:none;
+
+}
+
+#bna .hover_img {
+	overflow:hidden;
+	border-radius:50%;
+	border:4px solid #b6b6b6;
+	height:190px;
+	text-align:center;
+	transition: all 0.3s ease-in-out;
+	-moz-transition: all 0.3s ease-in-out;
+	-webkit-transition: all 0.3s ease-in-out;
+	-o-transition: all 0.3s ease-in-out;
+}
+#bna .hover_img img {border-radius:50%;
+}
+#bna .gallery-list .grid_3 a {
+	display:block;
+	padding:21px 17px;
+	outline:none;
+	transition: all 0.3s ease-in-out;
+	-moz-transition: all 0.3s ease-in-out;
+	-webkit-transition: all 0.3s ease-in-out;
+	-o-transition: all 0.3s ease-in-out;
+}
+#bna .gallery-list .grid_3 a:hover {
+	text-decoration:none;
+	background:#fff;
+	outline:1px solid #d2d0cb;
+	transition: all 0.3s ease-in-out;
+	-moz-transition: all 0.3s ease-in-out;
+	-webkit-transition: all 0.3s ease-in-out;
+	-o-transition: all 0.3s ease-in-out;
+}
+#bna .gallery-list .grid_3 a:hover p {
+	color:#0099ff;
+}
+#bna .gallery-list .grid_3 a:hover .hover_img {
+	border:4px solid #0099ff !important;
+}
+
+.portfolio_descr p {
+	display: block;
+	text-transform:uppercase;
+	color: #B5B5B5;
+	font-family:'Yanone Kaffeesatz', sans-serif;
+	font-weight:200;
+	font-size: 24px;
+	line-height: 20px;
+	margin:0;
+	padding:0 0 14px 0;
+	transition: all 0.3s ease-in-out;
+	-moz-transition: all 0.3s ease-in-out;
+	-webkit-transition: all 0.3s ease-in-out;
+	-o-transition: all 0.3s ease-in-out;
+}
+
+.bna_blue {
+	background: #0099ff;
+	border: 1px solid #3399ff;
+}
+.bna_grey {
+	background: #f4f4f4;
+	border: 1px solid #cccccc;
+}
+.cursor-none { cursor: none; }
+
+
+.invisible {
+	position: relative;
+}
+
+.wall {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	height: 550px;
+	z-index: 9999;
+}
+
+.customer-note {
+	border: 1px solid #ccc;
+	padding: 20px;
+	margin-bottom: 20px;
+}
+
+#map1 {
+	width:50%;
+}
+#map2 {
+	float:right;
+	width:50%;
+}
+
+.modal-content {
+	margin-top:200px;
+}
+
+.em-top-200 {
+	margin-top:200px !important;
+}
+
+.em-bot-50 {
+	margin-bottom:50px !important;
+}
+
+.overlay-button {
+	background: none repeat scroll 0 0 transparent;
+	height: 100px;
+	margin-top: -100px;
+	position: relative;
+	top: 100px;
+	width: 13%;
+}
+
+.overlay-button:hover {
+	cursor: pointer;
+}
+
+/* Smartphones (portrait) ----------- */
+@media only screen and (max-width : 320px) {
+.wall {height: 310px;}
+}
+
+/* Smartphones (portrait) ----------- */
+@media only screen and (max-width : 420px) {
+#map1 {width: 100%;}
+#map2 {
+width: 100%;
+float:none;
+
+}
+}
+
+
+
+@media (max-width: 766px) {
+.not_mobile {display: none;}
+.mobilefont h1 {font-size: 59px; line-height: 55px;}
+
+}
+@media (min-width: 767px) {
+.not_desktop {display: none;}
+
+}

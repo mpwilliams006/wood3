@@ -1,6 +1,7 @@
 <?php
 
-class UserController extends \BaseController {
+
+class UserController extends BaseController {
 
 	/**
 	 * Display a listing of the resource.
@@ -32,7 +33,38 @@ class UserController extends \BaseController {
 	 */
 	public function store()
 	{
-		//
+		$firstname = Input::get('firstname');
+		$lastname = Input::get('lastname');
+		$input['email'] = Input::get('email');
+		$password = Input::get('password');
+
+
+		// Must not already exist in the `email` column of `users` table
+		$rules = array('email' => 'unique:users,email');
+
+		$validator = Validator::make($input, $rules);
+
+		if ($validator->fails()) {
+			if (Auth::attempt(array('email' => $input['email'], 'password' => $password), true))
+			{
+				return View::make('success');
+			}else{
+				return $password;
+			}
+		}
+		else {
+
+			$password = Hash::make($password);
+
+			$user = new User;
+
+			$user->firstname = $firstname;
+			$user->lastname = $lastname;
+			$user->email = $input['email'];
+			$user->password = $password;
+
+			$user->save();
+		}
 	}
 
 
@@ -42,9 +74,17 @@ class UserController extends \BaseController {
 	 * @param  int  $id
 	 * @return Response
 	 */
-	public function show($id)
+	public function show($email)
 	{
-		//
+		$email = Input::get('email');
+		$password = Input::get('password');
+
+		if (Auth::attempt(array('email' => $email, 'password' => $password), true))
+		{
+			return View::make('success');
+		}else{
+			return $email;
+		}
 	}
 
 
@@ -81,6 +121,11 @@ class UserController extends \BaseController {
 	public function destroy($id)
 	{
 		//
+	}
+
+	public function logout() {
+		Auth::logout();
+		return View::make('hello');
 	}
 
 

@@ -16,6 +16,16 @@
 			return View::make('hello');
 		});
 
+	Route::get('/register', function()
+		{
+			return View::make('register');
+		});
+
+
+
+	Route::get('logout', 'UserController@logout');
+
+
 
 	Route::get('/authtest', array('before' => 'auth.basic', function()
 		{
@@ -23,7 +33,7 @@
 		}));
 
 	// Route group for API versioning
-	Route::group(array('prefix' => 'api/v1', 'before' => 'auth.basic'), function()
+	Route::group(array('prefix' => 'api/v1'), function()
 		{
 			Route::resource('users', 'UserController');
 		});
@@ -63,11 +73,12 @@
 
 			// Maybe add an entry to your DB that the charge was successful, or at least Log the charge or errors
 			// Stripe charge was successfull, continue by redirecting to a page with a thank you message
-			return Redirect::to('/pay/success');
+			return Redirect::to('/');
 
 		});
 
-	Route::get('/pay/success', function()
+
+	Route::get('/pay/success', array('before' => 'auth', function()
 		{
 			return View::make('success');
-		});
+		}));
